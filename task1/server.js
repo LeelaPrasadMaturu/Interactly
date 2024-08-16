@@ -41,7 +41,7 @@ app.post('/createContact', async (req, res) => {
         })
     } else if (data_store == "CRM") {
         try {
-            const response = await axios.post('https://domain.myfreshworks.com/crm/sales/api/contacts', {
+            const response = await axios.post('https://interactly-744553121417182141.myfreshworks.com/crm/sales/api/contacts', {
                 "contact": {
                     "first_name": `${first_name}`,
                     "last_name": `${last_name}`,
@@ -87,7 +87,7 @@ app.post('/updateContact/:id', async (req, res) => {
         });
     } else if (data_store == "CRM") {
         try {
-            const response = await axios.put(`https://domain.myfreshworks.com/crm/sales/api/contacts/${id}`, {
+            const response = await axios.put(`https://interactly-744553121417182141.myfreshworks.com/crm/sales/api/contacts/${id}`, {
                 "contact": {
                     "mobile_number": `${new_mobile_number}`,
                     "email": `${new_email}`
@@ -126,7 +126,7 @@ app.post('/getContact/:id', async (req, res) => {
         })
     } else if (data_store == "CRM") {
         try {
-            const response = await axios.get(`https://domain.myfreshworks.com/crm/sales/api/contacts/${id}`, {
+            const response = await axios.get(`https://interactly-744553121417182141.myfreshworks.com/crm/sales/api/contacts/${id}`, {
                 headers: {
                     Authorization: `Token token=${process.env.CRM}`,
                     'Content-Type': 'application/json'
@@ -161,7 +161,7 @@ app.post('/deleteContact/:id', async (req, res) => {
         });
     } else if (data_store == "CRM") {
         try {
-            const response = await axios.delete(`https://domain.myfreshworks.com/crm/sales/api/contacts/${id}`, {
+            const response = await axios.delete(`https://interactly-744553121417182141.myfreshworks.com/crm/sales/api/contacts/${id}`, {
                 headers: {
 
                     Authorization: `Token token=${process.env.CRM}`,
